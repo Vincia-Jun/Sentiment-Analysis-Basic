@@ -5,7 +5,7 @@ This is a basic code repository for text sentiment analysis. It is used to store
 ## 🗃️File Introduction
 
 | Path  | Explanation |
---- | :- | 
+:-  | :- | 
 | [`data`](https://github.com/Vincia-Jun/Sentiment-Analysis-Basic/blob/main/data) | This folder stores our training set, validation set and test set. |
 | [`logs`](https://github.com/Vincia-Jun/Sentiment-Analysis-Basic/blob/main/logs) | This folder stores training logs in csv format. We have uploaded the training logs of several classic models here. |
 | [`models`](https://github.com/Vincia-Jun/Sentiment-Analysis-Basic/blob/main/models) | This folder stores the model framework. |
