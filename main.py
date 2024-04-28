@@ -36,7 +36,7 @@ def get_vocab(train_data):
                 vocab.add(word.strip())
 
     # 将词表写入本地vocab.txt文件
-    with open('/hy-tmp/SACODE/data/vocab.txt', 'w') as file:
+    with open('data/vocab.txt', 'w') as file:
         for word in  vocab:
             file.write(word)
             file.write('\n')
@@ -47,7 +47,7 @@ def get_vocab(train_data):
 class Config():
     embedding_dim = 300 # 词向量维度
     max_seq_len = 200   # 文章最大词数 200
-    vocab_file = '/hy-tmp/SACODE/data/vocab.txt' # 词汇表文件路径
+    vocab_file = 'data/vocab.txt' # 词汇表文件路径
     vocab_len = 35093
 
 
@@ -176,15 +176,15 @@ class TTextConfig:
 if __name__ == '__main__':
 
     # parsers
-    batch_size = 128
-    num_workers = 32
+    batch_size = 64
+    num_workers = 4
     num_epochs = 2
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
     # get data
-    train_data = pd.read_csv('/hy-tmp/SACODE/data/train.tsv', sep='\t')
-    valid_data = pd.read_csv('/hy-tmp/SACODE/data/dev.tsv', sep='\t')
-    test_data = pd.read_csv('/hy-tmp/SACODE/data/test.tsv', sep='\t') 
+    train_data = pd.read_csv('data/train.tsv', sep='\t')
+    valid_data = pd.read_csv('data/dev.tsv', sep='\t')
+    test_data = pd.read_csv('data/test.tsv', sep='\t') 
     x_train, y_train = train_data.text_a.values, train_data.label.values # 训练集
     x_valid, y_valid = valid_data.text_a.values, valid_data.label.values # 验证集
     x_test, y_test = test_data.text_a.values, test_data.label.values # 测试集
