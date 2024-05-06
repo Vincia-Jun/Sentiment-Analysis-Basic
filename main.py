@@ -299,6 +299,7 @@ if __name__ == '__main__':
             data = [epoch, round(train_loss.item(), 2), round(test_acc*100, 2), round(test_f1*100, 2), 
                     round(train_acc*100, 2), round(eval_loss.item(), 2), round(eval_acc*100, 2)]
             writer.writerow(data)
+            file.flush()
             print("----------------------------------------------------------------------------------------")
 
 
@@ -306,6 +307,7 @@ if __name__ == '__main__':
         max_data = ['Max', '', round(max_test_acc*100, 2), round(max_test_f1*100, 2), 
                     '', '', round(max_eval_acc*100, 2)]
         writer.writerow(max_data)
+        file.flush()
 
 
         # 计算模型时空复杂度
